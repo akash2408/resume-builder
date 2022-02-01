@@ -8,12 +8,27 @@
         </p>
     </div>
 <% else %>
-    <div class="bg-red-200 border-red-600 text-red-600 border-l-4 p-4" role="alert">
-        <p class="font-bold">
-            Error
-        </p>
-        <p>
-            <%= message %>
-        </p>
-    </div>
+    <% if(flash[type].kind_of?(Array)) %>
+        <% flash[type].each do |message| %>
+            <div class="bg-red-200 border-red-600 text-red-600 border-l-4 p-4" role="alert">
+                <p class="font-bold">
+                    Error
+                </p>
+                <p>
+                    <%= message %>
+                </p>
+            </div>
+        <% end %> 
+    <% else %>
+        <div class="bg-red-200 border-red-600 text-red-600 border-l-4 p-4" role="alert">
+            <p class="font-bold">
+                Error
+            </p>
+            <p>
+                <%= message %>
+            </p>
+        </div>
+    <% end %>
+
+
 <% end %>
