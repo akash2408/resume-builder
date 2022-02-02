@@ -84,7 +84,7 @@ ActiveRecord::Schema.define(version: 2022_02_01_192658) do
   create_table "projects", force: :cascade do |t|
     t.string "title"
     t.string "project_url"
-    t.string "teck_stack"
+    t.string "tech_stack"
     t.text "description"
     t.bigint "experience_id"
     t.datetime "created_at", precision: 6, null: false
