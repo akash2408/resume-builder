@@ -9,6 +9,7 @@ class RegistrationsController < ApplicationController
     def create
       @user = User.new(user_params)
       @user.profile = Profile.new
+      @user.profile.name = @user.name
       if @user.save
         log_in(@user)
         redirect_to root_path
