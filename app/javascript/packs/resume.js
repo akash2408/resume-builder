@@ -1,7 +1,7 @@
 var share_btn = document.getElementById("share-btn");
 share_btn.addEventListener("click", (function(e) {
     e.preventDefault(),
-    navigator.clipboard.writeText(e.target.href),
+    navigator.clipboard.writeText(window.location.origin + e.target.href),
     e.target.innerText = "Copied!"
 }));
 
